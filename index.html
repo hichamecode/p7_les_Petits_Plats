@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Les petits plats</title>
+</head>
+
+<body>
+    <header class="header_container">
+        <div class="logo_container">
+            <img src="assets/logos/les-petits-plats.svg" alt="les petits plats">
+            <img src="assets/logos/logo-image.svg" alt="logo les petits plats">
+        </div>
+        <div class="search_bar_container">
+            <h1 class="main_title">CHERCHEZ PARMI PLUS DE 1500 RECETTES <br>
+                DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES</h1>
+            <form class="search_bar_form">
+                <input type="search" name="search_bar_name" class="search_bar"
+                    placeholder="Rechercher une recette, un ingrédient, ...">
+                <button class="search_bar_btn" type="submit"><img src="/assets/logos/search-logo.svg"
+                        alt="icone de recherche"></button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <div class="filter_bar">
+            <div class="dropdown dropdown_ingredients">
+                <button class="filter_card filter_ingredients_card">Ingrédients<img
+                        src="/assets/logos/filter_expand_btn.svg" alt="chevron dropdown" class="filter_expand_btn_ingredients filter_expand_btn">
+                </button>
+                <div class="dropdown_menu_ingredients dropdown_menu">
+                    <form class="filter_card_form">
+                        <input type="search" name="filter_card_search" class="filter_card_search filter_card_search_ingredients">
+                        <button class="filter_search_btn" type="submit"> <img src="/assets/logos/filter_search_btn.svg"
+                                alt="icone de recherche"></button>
+                    </form>
+                    <ul class=" list ingredients_list">
+                    </ul>
+                </div>
+            </div>
+            <div class="dropdown  dropdown_appliances">
+                <button class="filter_card filter_appliances_card">Appareils<img
+                        src="/assets/logos/filter_expand_btn.svg" alt="chevron dropdown" class="filter_expand_btn_appliances filter_expand_btn">
+                </button>
+                <div class="dropdown_menu_appliances dropdown_menu">
+                    <form class="filter_card_form">
+                        <input type="search" name="filter_card_search" class="filter_card_search filter_card_search_appliances">
+                        <button class="filter_search_btn" type="submit"> <img src="/assets/logos/filter_search_btn.svg"
+                                alt="icone de recherche"></button>
+                    </form>
+                    <ul class="list appliances_list">
+                    </ul>
+                </div>
+            </div>
+            <div class="dropdown dropdown_ustensils">
+                <button class="filter_card filter_ustensils_card">Ustensiles<img
+                        src="/assets/logos/filter_expand_btn.svg" alt="chevron dropdown" class="filter_expand_btn_ustensils filter_expand_btn">
+                </button>
+                <div class="dropdown_menu_ustensils dropdown_menu">
+                    <form class="filter_card_form">
+                        <input type="search" name="filter_card_search" class="filter_card_search filter_card_search_ustensils">
+                        <button class="filter_search_btn" type="submit"> <img src="/assets/logos/filter_search_btn.svg"
+                                alt="icone de recherche"></button>
+                    </form>
+                    <ul class="list ustensils_list">
+                    </ul>
+                </div>
+            </div>
+            <div class="recipes_counter">50 recettes</div>
+        </div>
+        <div class="label_bar">
+            <!-- <div class="label_card label_ingredients_container">
+                <div class="label_card_text label_ingredients_card">Crème de coco</div>
+                <img class="closing_label_btn closing_label_btn_ingredients" src="/assets/logos/closing-label-btn.svg"
+                    alt="bouton de fermeture">
+            </div>
+            <div class="label_card label_appliances_container">
+                <div class=" label_card_text label_appliances_card">Cuiseur à riz</div>
+                <img class="closing_label_btn closing_label_btn_appliances" src="/assets/logos/closing-label-btn.svg"
+                    alt="bouton de fermeture">
+            </div>
+            <div class="label_card label_ustensils_container">
+                <div class="label_card_text label_ustensils_card">Spatule</div>
+                <img class="closing_label_btn closing_label_btn_ustensils" src="/assets/logos/closing-label-btn.svg"
+                    alt="bouton de fermeture">
+            </div> -->
+        </div>
+        <div class="recipe_cards_container">
+            <!-- <article class="recipe_card">
+                <header class="recipe_card_header">
+                    <img class="recipe_card_header_img" src="/assets/images/Recette01.jpg" alt="photo de la recette">
+                    <p class="recipe_card_header_label">10min</p>
+                </header>
+                <section class="recipe_card_bottom">
+                    <h2 class="recipe_card_title">Limonade de Coco</h2>
+                    <article class="recipe_card_bottom_upper_part">
+                        <h3 class="recipe_card_how_to">recette</h3>
+                        <p class="recipe_card_text">Mettre les glaçons à votre goût dans le blender, ajouter le lait, la
+                            crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée.
+                        </p>
+                    </article>
+                    <article class="recipe_card_bottom_lower_part">
+                        <h3 class="recipe_card_ingredients">ingrédients</h3>
+                        <div class="ingredients_container">
+                            <div class="ingredient_container">
+                                <p class="ingredient_name">Lait de coco</p>
+                                <p class="ingredient_quantity">400ml</p>
+                            </div>
+                            <div class="ingredient_container">
+                                <p class="ingredient_name">Jus de citron</p>
+                                <p class="ingredient_quantity">2</p>
+                            </div>
+                            <div class="ingredient_container">
+                                <p class="ingredient_name">Crème de coco</p>
+                                <p class="ingredient_quantity">4 cuillères</p>
+                            </div>
+                            <div class="ingredient_container">
+                                <p class="ingredient_name">Sucre</p>
+                                <p class="ingredient_quantity">20g</p>
+                            </div>
+                            <div class="ingredient_container">
+                                <p class="ingredient_name">Glaçons</p>
+                                <p class="ingredient_quantity">2</p>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </article> -->
+            <!-- <article class="recipe_card"></article>
+            <article class="recipe_card"></article>
+            <article class="recipe_card"></article>
+            <article class="recipe_card"></article>
+            <article class="recipe_card"></article> -->
+        </div>
+    </main>
+    <script src="scripts/index.js" type="module"></script>
+</body>
+
+</html>
