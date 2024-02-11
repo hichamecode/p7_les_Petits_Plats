@@ -41,16 +41,6 @@ export function updateState(type, tag) {
 	}
 }
 
-export function resetState(type) {
-	if (type === 'ingredient') {
-		state.ingClicked = []
-	} else if (type === 'appliance') {
-		state.appClicked = []
-	} else if (type === 'ustensil') {
-		state.ustClicked = []
-	}
-}
-
 function createLists(recipes) {
 
 	const ingredientExtractor = new IngredientExtractor()
@@ -107,6 +97,19 @@ export function triggerSearchAndUpdateDOM() {
 		const { tags, type } = statesWithTypes[i]
 		displayLabelCard(tags, type)
 	}
+}
+
+const form = document.querySelector('.search_bar_form')
+form.addEventListener('submit', (event) => {
+	event.preventDefault()
+})
+
+const filterCardsForm = document.querySelectorAll('.filter_card_form')
+for (let i = 0; i < filterCardsForm.length; i++) {
+	filterCardsForm[i].addEventListener('submit', (event) => {
+		event.preventDefault()
+		console.log('test ok for preventing')
+	})
 }
 
 // initialisation de la recherche et du DOM
