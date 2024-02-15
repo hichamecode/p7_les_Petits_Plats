@@ -28,16 +28,8 @@ export function updateState(type, tag) {
 		elementInState = state.ustClicked
 	}
 
-	let tagFound = false
-	for (let i = 0; i < elementInState.length; i++) {
-		if (elementInState[i] === tag) {
-			tagFound = true
-			break
-		}
-	}
-
-	if (!tagFound) {
-		elementInState[elementInState.length] = tag
+	if (!elementInState.includes(tag)) {
+		elementInState.push(tag)
 	}
 }
 
@@ -64,13 +56,13 @@ function addListToDOM(listName, arrayOfElements, elementClass) {
 	const list = document.querySelector(listName)
 	list.innerHTML = ''
 
-	for (let i = 0; i < arrayOfElements.length; i++) {
-		const element = document.createElement('li')
-		element.classList.add(elementClass)
-		element.classList.add('tag_element')
-		element.textContent = arrayOfElements[i]
-		list.appendChild(element)
-	}
+	arrayOfElements.forEach(element => {
+		const listItem = document.createElement('li')
+		listItem.classList.add(elementClass)
+		listItem.classList.add('tag_element')
+		listItem.textContent = element
+		list.appendChild(listItem)
+	})
 }
 
 export function triggerSearchAndUpdateDOM() {
@@ -81,9 +73,9 @@ export function triggerSearchAndUpdateDOM() {
 	addListToDOM('.ustensils_list', ustensils, 'ustensil_element')
 
 	const statesWithTypes = [
-		{tags: state.ingClicked, type :'ingredient'},
-		{tags: state.appClicked, type : 'appliance'},
-		{tags: state.ustClicked, type : 'ustensil'}
+		{ tags: state.ingClicked, type: 'ingredient' },
+		{ tags: state.appClicked, type: 'appliance' },
+		{ tags: state.ustClicked, type: 'ustensil' }
 	]
 
 	displayLabelCard(state.ingClicked, 'ingredient')
@@ -93,10 +85,10 @@ export function triggerSearchAndUpdateDOM() {
 	const labelBar = document.querySelector('.label_bar')
 	labelBar.innerHTML = ''
 
-	for (let i = 0; i < statesWithTypes.length; i++) {
-		const { tags, type } = statesWithTypes[i]
+	statesWithTypes.forEach(element => {
+		const { tags, type } = element
 		displayLabelCard(tags, type)
-	}
+	})
 }
 
 const form = document.querySelector('.search_bar_form')
@@ -105,12 +97,11 @@ form.addEventListener('submit', (event) => {
 })
 
 const filterCardsForm = document.querySelectorAll('.filter_card_form')
-for (let i = 0; i < filterCardsForm.length; i++) {
-	filterCardsForm[i].addEventListener('submit', (event) => {
+filterCardsForm.forEach(element => {
+	element.addEventListener('submit', (event) => {
 		event.preventDefault()
-		console.log('test ok for preventing')
 	})
-}
+})
 
 // initialisation de la recherche et du DOM
 triggerSearchAndUpdateDOM()
@@ -144,12 +135,13 @@ function filterSearch(inputSelector, dataList, listSelector, elementClass) {
 
 		const filteredData = []
 		let index = 0
-		for (let i = 0; i < dataList.length; i++) {
-			if (regex.test(dataList[i].toLowerCase())) {
-				filteredData[index] = dataList[i]
+		dataList.forEach(element => {
+			if (regex.test(element.toLowerCase())) {
+				filteredData[index] = element
 				index++
 			}
-		}
+		})
+
 		addListToDOM(listSelector, filteredData, elementClass)
 	})
 }

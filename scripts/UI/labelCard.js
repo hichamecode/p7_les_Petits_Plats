@@ -42,7 +42,7 @@ function removeTagFromState(type, tag) {
 	// findIndex pour trouver l'index de l'élément à supprimer
 	const indexToRemove = elementInState.findIndex(element => element === tag)
     
-	// Si index trouvé, splice pour supprimer l'élément
+	// Si index trouvé, splice pour supprimer l'élément (-1 >>> aucun élement n'a été trouvé)
 	if (indexToRemove !== -1) {
 		elementInState.splice(indexToRemove, 1)
 	}
